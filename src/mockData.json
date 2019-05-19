@@ -1,0 +1,97 @@
+{
+  "work": {
+    "e5e59f37-02d7-5a68-a725-0d74deb55cbb": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "e5e59f37-02d7-5a68-a725-0d74deb55cbb",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "91f30e35-d486-5e3a-a8f2-d83c27574729": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "91f30e35-d486-5e3a-a8f2-d83c27574729",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "798adf5c-25f4-546b-85c5-750fc44af6ff": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "798adf5c-25f4-546b-85c5-750fc44af6ff",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    }
+  },
+  "articles": {
+    "b54b6dc2-4e9f-507a-bee1-d9901dd1d9db": {
+      "title": "Pump up the volume: Voice UI is here to stay",
+      "author": "Elastique",
+      "id": "b54b6dc2-4e9f-507a-bee1-d9901dd1d9db",
+      "url": "http://ekne.gt/let",
+      "image": "https://cdn-images-1.medium.com/max/1600/1*hwdG0oeAVXqkDipy3r4a9g.jpeg",
+      "likes": 0,
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "e2ebe2d4-8861-544f-9a16-b39d1363c945": {
+      "title": "Pump up the volume: Voice UI is here to stay",
+      "author": "Elastique",
+      "id": "e2ebe2d4-8861-544f-9a16-b39d1363c945",
+      "url": "http://ekne.gt/let",
+      "image": "https://cdn-images-1.medium.com/max/1600/1*hwdG0oeAVXqkDipy3r4a9g.jpeg",
+      "likes": 0,
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    }
+  },
+  "courses": {
+    "4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb": {
+      "title": "CSS to the rescue",
+      "id": "4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb",
+      "type": "lesson",
+      "description" : "<p>In dit vak gaan we aan de slag met CSS. We gaan goed werkende responsive oplossingen bedenken én maken voor complexe interfaces. Dat is erg belangrijk, te veel ontwerpers kunnen dit niet zo goed. Het is ook belangrijk om een aantal basisprincipes achter CSS goed te begrijpen. Niet alleen op praktisch niveau, ook op experimenteel niveau. </p><blockquote>Zonder goed begrip van de basisprincipes is CSS magisch en weird.</blockquote><p>Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil. En dat is nodig om webpagina’s vorm te geven met attention to detail. Webpagina’s waar mensen blij van worden.</p>",
+      "studentWork": ["e5e59f37-02d7-5a68-a725-0d74deb55cbb",  "91f30e35-d486-5e3a-a8f2-d83c27574729", "798adf5c-25f4-546b-85c5-750fc44af6ff"],
+      "articles:": ["b54b6dc2-4e9f-507a-bee1-d9901dd1d9db", "e2ebe2d4-8861-544f-9a16-b39d1363c945"]
+    },
+    "0e5f8984-f6c0-5b80-b8a9-f8530fd907c1": {
+      "title": "Web app from scratch",
+      "id": "0e5f8984-f6c0-5b80-b8a9-f8530fd907c1",
+      "type": "lesson"
+    },
+    "55c82bc1-6799-5caf-8a56-be4eff98e90e": {
+      "title": "Project 1",
+      "id": "55c82bc1-6799-5caf-8a56-be4eff98e90e",
+      "type": "project"
+    },
+    "cd2bb464-0b8b-5616-8534-79c1e1594930": {
+      "title": "Weekly Nerd",
+      "id": "cd2bb464-0b8b-5616-8534-79c1e1594930",
+      "type": "nerd"
+    },
+    "ad78cdbd-966c-53d8-a2d0-1db15517e957": {
+      "title": "CSS to the rescue",
+      "id": "ad78cdbd-966c-53d8-a2d0-1db15517e957",
+      "type": "lesson",
+      "description" : "<p>In dit vak gaan we aan de slag met CSS. We gaan goed werkende responsive oplossingen bedenken én maken voor complexe interfaces. Dat is erg belangrijk, te veel ontwerpers kunnen dit niet zo goed. Het is ook belangrijk om een aantal basisprincipes achter CSS goed te begrijpen. Niet alleen op praktisch niveau, ook op experimenteel niveau. </p><blockquote>Zonder goed begrip van de basisprincipes is CSS magisch en weird.</blockquote><p>Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil. En dat is nodig om webpagina’s vorm te geven met attention to detail. Webpagina’s waar mensen blij van worden.</p>"
+    },
+    "fc40561e-0271-51cb-9854-8c5802f231c8": {
+      "title": "Web app from scratch",
+      "id": "fc40561e-0271-51cb-9854-8c5802f231c8",
+      "type": "lesson"
+    },
+    "92714bd5-609d-5e1f-9fdb-ae3641046ebb": {
+      "title": "Project 1",
+      "id": "92714bd5-609d-5e1f-9fdb-ae3641046ebb",
+      "type": "project"
+    },
+    "1e93f7fe-3ca0-53a8-9457-964392106d81": {
+      "title": "Weekly Nerd",
+      "id": "1e93f7fe-3ca0-53a8-9457-964392106d81",
+      "type": "nerd"
+    }
+  }
+}
