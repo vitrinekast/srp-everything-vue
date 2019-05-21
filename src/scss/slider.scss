@@ -1,0 +1,35 @@
+.slider {
+  display: flex;
+  overflow-y: scroll;
+  margin: 32px 0;
+  scroll-snap-type: x mandatory;
+
+
+  &__col {  
+    position: relative;
+    min-width: 800px;
+    margin: 0 16px;
+    scroll-snap-align: start;
+    padding-right: 100px;
+    @include ratio(16/9)
+    
+  }
+  
+  
+  
+  &__item {
+    @extend .p--abs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    opacity: 0;
+    transition: $transition--base;
+    
+    .in-view & {
+      opacity: 1;
+    }
+  }
+  
+  
+}

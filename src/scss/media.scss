@@ -1,0 +1,14 @@
+:root {
+  --slide-bg: url("") ;
+}
+
+.media {
+  
+  &--bg {
+    @extend .p--abs;
+    background-position: center;
+    background-size: cover;
+    background-image: v(slide-bg) 
+    
+  }
+}

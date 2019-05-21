@@ -1,0 +1,48 @@
+.nav_vertical__item {
+  transition: $transition--bezier;
+
+  &--active {
+    // transform: translateX(50%);
+  }
+}
+
+.article article {
+  transition: all .2s;
+  opacity: 1;
+}
+
+.fade {
+  &-enter-to {
+    .article article {
+      opacity: 0;
+    }
+  }
+
+  &-enter-active {
+    .article article {
+      opacity: 0;
+      transform: translateY(50px);
+
+    }
+  }
+
+  &-enter-active,
+  &-leave-to {
+    transition: $transition--opacity;
+
+    .nav_vertical__item {
+      opacity: 0;
+      transform: translateX(-50%);
+
+      &--active {
+        transform: translateX(50%);
+        opacity: 1;
+      }
+    }
+  }
+
+  &-enter,
+  &-leave-to {
+    // opacity: 0;
+  }
+}

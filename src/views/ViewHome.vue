@@ -1,37 +1,25 @@
 <template lang="html">
-  <div class="">
-    <ul class="" v-for='course in courses'>
-      <li>
-        <router-link :to="{ name: 'Course', params: {id: course.id} }">
-          {{courseName(course)}}
-        </router-link>
-      </li>
-    </ul>
+  <div class="flex--center">
+    <CourseNavigation :courses="courses" />
   </div>
 </template>
 
 <script>
+import CourseNavigation from '@/components/CourseNavigation'
+// TODO: implement Firebase
 import sourceData from '@/mockData.json'
 
 export default {
-	data() {
-		return {
-			courses: sourceData.courses
-		}
-	},
-	methods: {
-		courseName( course ) {
-			const possibilities = {
-				lesson: `> ${course.title}`,
-				project: `# ${course.title}`,
-				nerd: `{${course.title}}`
-			}
-			return possibilities[ course.type ] // "Item 1
-		}
-
-	}
+  components: {
+    CourseNavigation
+  },
+  // TODO: Make props more specific using Vue standards
+  props: [ 'course', 'id' ],
+  data () {
+    return {
+      // Return all the courses. TODO: Implement firebase
+      courses: Object.values(sourceData.courses)
+    }
+  }
 }
 </script>
-
-<style lang="css" scoped>
-</style>

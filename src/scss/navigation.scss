@@ -1,0 +1,42 @@
+:root {
+  --nav-list--transformY: -122px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: $gutter--sm;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+
+  &__item {
+    padding: $gutter--sm/2 $gutter--sm;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.nav_vertical {
+  position: relative;
+
+  &__list {
+    position: absolute;
+    width: $container-width;
+    left: 0;
+    transform: translate3d(-50%, v(nav-list--transformY), 0);
+    transition: .1s linear;
+  }
+
+  &__item {
+    padding: $gutter--lg*1.5 0;
+    opacity: .5;
+    max-width: calc((100%/3)*2);
+    width: 100%;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}

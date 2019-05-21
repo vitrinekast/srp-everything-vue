@@ -7,6 +7,7 @@
       "id": "e5e59f37-02d7-5a68-a725-0d74deb55cbb",
       "name": "Ak gaan we aan de slag met CSS. We gaan goed",
       "likes": 0,
+      "image": "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
       "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
     },
     "91f30e35-d486-5e3a-a8f2-d83c27574729": {
@@ -16,6 +17,7 @@
       "id": "91f30e35-d486-5e3a-a8f2-d83c27574729",
       "name": "Ak gaan we aan de slag met CSS. We gaan goed",
       "likes": 0,
+      "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
       "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
     },
     "798adf5c-25f4-546b-85c5-750fc44af6ff": {
@@ -25,6 +27,37 @@
       "id": "798adf5c-25f4-546b-85c5-750fc44af6ff",
       "name": "Ak gaan we aan de slag met CSS. We gaan goed",
       "likes": 0,
+      "image": "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "ad6a28e7-654e-5ee0-a9b0-7d14ab165a9f": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "ad6a28e7-654e-5ee0-a9b0-7d14ab165a9f",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "image": "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "ac215a42-af26-585e-b196-fdee60c51d05": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "ac215a42-af26-585e-b196-fdee60c51d05",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "image": "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
+      "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
+    },
+    "9e5b960f-1bcd-5f3b-84bc-a045dd47e6d3": {
+      "student": "Kenneth Gonzalez",
+      "url": "http://okge.km/uwuka",
+      "description": "this is the description",
+      "id": "9e5b960f-1bcd-5f3b-84bc-a045dd47e6d3",
+      "name": "Ak gaan we aan de slag met CSS. We gaan goed",
+      "likes": 0,
+      "image": "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
       "courses": ["4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb"]
     }
   },
@@ -54,7 +87,7 @@
       "id": "4b89f797-7702-5b2d-ae41-4ba3ffb8a3eb",
       "type": "lesson",
       "description" : "<p>In dit vak gaan we aan de slag met CSS. We gaan goed werkende responsive oplossingen bedenken én maken voor complexe interfaces. Dat is erg belangrijk, te veel ontwerpers kunnen dit niet zo goed. Het is ook belangrijk om een aantal basisprincipes achter CSS goed te begrijpen. Niet alleen op praktisch niveau, ook op experimenteel niveau. </p><blockquote>Zonder goed begrip van de basisprincipes is CSS magisch en weird.</blockquote><p>Met een goed begrip heb je CSS onder controle en kan je het laten doen wat jij wil. En dat is nodig om webpagina’s vorm te geven met attention to detail. Webpagina’s waar mensen blij van worden.</p>",
-      "studentWork": ["e5e59f37-02d7-5a68-a725-0d74deb55cbb",  "91f30e35-d486-5e3a-a8f2-d83c27574729", "798adf5c-25f4-546b-85c5-750fc44af6ff"],
+      "studentWork": ["e5e59f37-02d7-5a68-a725-0d74deb55cbb",  "91f30e35-d486-5e3a-a8f2-d83c27574729", "798adf5c-25f4-546b-85c5-750fc44af6ff", "ad6a28e7-654e-5ee0-a9b0-7d14ab165a9f", "ac215a42-af26-585e-b196-fdee60c51d05", "9e5b960f-1bcd-5f3b-84bc-a045dd47e6d3"],
       "articles:": ["b54b6dc2-4e9f-507a-bee1-d9901dd1d9db", "e2ebe2d4-8861-544f-9a16-b39d1363c945"]
     },
     "0e5f8984-f6c0-5b80-b8a9-f8530fd907c1": {

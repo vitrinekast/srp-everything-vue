@@ -1,0 +1,16 @@
+$color--blue: blue;
+$color--red: red;
+$color--green: green;
+
+$container-width: 1200px;
+
+$font-size-base: 1em;
+
+$gutter--sm: 8px;
+$gutter--md: 16px;
+$gutter--lg: 32px;
+
+$transition--base:          all .1s ease-in-out;
+$transition--bezier:        all .5s cubic-bezier(.2, 0, 0, 1);
+$transition--bezier-android: all .2s linear;
+$transition--opacity:       opacity .2s ease-in-out;

@@ -1,11 +1,18 @@
-@import 'reset';
+// Fist setup of the SCSS, add extra modules on-the-go
 
-@import 'config';
-@import 'layout';
-@import 'typography';
+@import 'reset'; // Reset default Browser behaviour
 
-@import 'utils';
+@import 'functions'; // Functions, mixins and reusable stuff
+@import 'config'; // Variables (non-CSS)
+@import 'layout'; // Layout stuff for every page
+@import 'typography'; // Typography, import fonts, type scale
 
-@import 'navigation';
-@import 'lists';
+@import 'utils'; // Any reusable classes can be put here
+@import 'grid'; // Generic grid stuff. Might be merged with layout
+@import 'article'; // Article styling
+
+@import 'navigation'; // All the navigation components
+@import 'media'; // reusable media classes
+@import 'transitions'; // Vue page transitions
+@import 'slider'; // All slider components
 

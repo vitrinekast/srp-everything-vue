@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine&display=swap');
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: 'Cousine', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.heading,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Cousine', sans-serif;
+  font-weight: 400;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  @extend .heading;
+}
+
+h1 {
+  font-size: $font-size-base*5.5;
+}
+
+.h2,
+h2 {
+  font-size: $font-size-base*4.5;
+
+}
+
+.h3,
+h3 {
+  font-size: $font-size-base*2.8;
+}
+
+h4 {
+  font-size: $font-size-base*1.7;
+}
+
+h5 {
+  font-size: $font-size-base*1.3;
+}
+
+.text_small,
+small {
+  font-size: $font-size-base*.75;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote {
+  @extend .h3;
+  color: $color--blue;
+}

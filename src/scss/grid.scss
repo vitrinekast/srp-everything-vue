@@ -1,0 +1,12 @@
+.grid--1-2 {
+  display: flex;
+
+  .col {
+    width: 100%;
+    max-width: calc((100%/3)*2);
+
+    &:first-of-type {
+      max-width: calc((100%/3)*1);
+    }
+  }
+}

@@ -14,7 +14,10 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        title: 'home'
+      }
     },
     {
       path: '/submit',
@@ -30,7 +33,10 @@ export default new Router({
       path: '/course/:id',
       name: 'Course',
       component: Course,
+      meta: {
+        title: 'course'
+      },
       props: true
-    },
+    }
   ]
 })
