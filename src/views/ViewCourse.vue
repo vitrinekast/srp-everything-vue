@@ -6,7 +6,7 @@
       </div>
       <div class="col article">
         <h2>{{courseName(course)}}</h2>
-        <article class="" v-html="course.description">
+        <article class="" v-html="course.description" :load="onLoadedArticle">
 
         </article>
       </div>
@@ -63,6 +63,9 @@ export default {
         nerd: `{${course.title}}`
       }
       return possibilities[ course.type ] // "Item 1
+    },
+    onLoadedArticle(el) {
+      console.log(this, el, this.$el)
     }
   }
 }

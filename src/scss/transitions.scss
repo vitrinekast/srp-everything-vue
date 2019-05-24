@@ -6,20 +6,23 @@
   }
 }
 
-.article article {
-  transition: all .2s;
+.article article > * {
+  transition: $transition--bezier;
   opacity: 1;
+  transform: translateY(0);
 }
 
 .fade {
   &-enter-to {
-    .article article {
+    .article article > * {
       opacity: 0;
+      transform: translateY(50%);
+      border: 2px solid red;
     }
   }
 
   &-enter-active {
-    .article article {
+    .article article > * {
       opacity: 0;
       transform: translateY(50px);
 
@@ -33,6 +36,7 @@
     .nav_vertical__item {
       opacity: 0;
       transform: translateX(-50%);
+      transition-delay: calc(var(--staggerIndex) * .1s);
 
       &--active {
         transform: translateX(50%);

@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="nav_vertical">
     <ul class="nav_vertical__list">
-      <li v-for='(course, index) in courses' class='nav_vertical__item' :key="index" :class="[index === (wheelIndex - 1) ? 'nav_vertical__item--active' : '', '']">
+      <li v-for='(course, index) in courses' class='nav_vertical__item'  :style="{ '--staggerIndex': index }" :key="index"  :class="[index === (wheelIndex - 1) ? 'nav_vertical__item--active' : '', '']">
         <router-link :to="{ name: 'Course', params: {id: course.id} }">
          <h2>{{courseName(course)}}</h2>
        </router-link>
@@ -33,12 +33,10 @@ export default {
     }
   },
   mounted () {
-    this.height = document.querySelector('.nav_vertical__item').clientHeight
-    
     // detect wheel event in order to move to the next/previous courseItem
     window.addEventListener('wheel', (e) => {
       let delta = e.deltaY || e.detail || e.wheelDelta
-      
+
       // do nothing untill the treshold
       if (Math.abs(delta) > 100) {
         this.counter1 += 1
@@ -51,7 +49,7 @@ export default {
   },
   methods: {
     wheelAct () {
-      // Depend if the wheelEnd should be called 
+      // Depend if the wheelEnd should be called
       this.counter2 = this.counter1
       setTimeout(() => this.counter2 === this.counter1 ? this.wheelEnd() : this.wheelAct(), 50)
     },
@@ -61,13 +59,14 @@ export default {
       this.counter1 = 0
       this.counter2 = 0
     },
-    // Only called on the first wheel event 
+    // Only called on the first wheel event
     wheelStart () {
       this.marker = false
+      console.log(this.height, document.querySelector('.nav_vertical__item').clientHeight)
       // Increase/decrease the active wheelIndex to the available item
       this.wheelIndex = valBetween(this.wheelIndex += this.direction, this.minIndex, this.maxIndex)
       // CSS Variables (🔥) to center the active item in the courseNavigation
-      document.documentElement.style.setProperty('--nav-list--transformY', this.wheelIndex * -1 * this.height + 'px')
+      document.documentElement.style.setProperty('--nav-list--transformY', this.wheelIndex * -1 * (document.querySelectorAll('.nav_vertical__item')[this.wheelIndex].clientHeight/2) + 'px')
       this.wheelAct()
     },
     // Display a different kind of title dependant on the subject

@@ -8,7 +8,7 @@
 <router-link to="/submit" class='nav__item'>Submit your stuff</router-link>
 </nav>
 
-<transition  name="fade" mode="out-in" duration='500'>
+<transition  name="fade" mode="out-in" duration='5000'>
 <router-view class='view' :class="'view--' + this.$route.name"/>
 </transition>
 </div>

@@ -1,5 +1,17 @@
+@keyframes animateIn {
+  from {
+    transform: translate3d(0, 100px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+  }
+}
+
 :root {
   --nav-list--transformY: -122px;
+  --staggerIndex: 0;
 }
 
 .nav {
@@ -26,17 +38,24 @@
     width: $container-width;
     left: 0;
     transform: translate3d(-50%, v(nav-list--transformY), 0);
-    transition: .1s linear;
+    transition: .4s cubic-bezier(.2, 0, 0, 1);
   }
 
   &__item {
     padding: $gutter--lg*1.5 0;
-    opacity: .5;
+    color: lighten($color--black, 50);
     max-width: calc((100%/3)*2);
     width: 100%;
-
+    
+    a {
+      display: block;
+      animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
+      animation-delay: calc(var(--staggerIndex) * .1s);
+      animation-fill-mode: both;
+    }
+    
     &--active {
-      opacity: 1;
+      color: $color--black;
     }
   }
 }
