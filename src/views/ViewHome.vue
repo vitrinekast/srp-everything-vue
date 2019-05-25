@@ -1,8 +1,6 @@
 <template lang="html">
   <div>
-    <div class="line">
-
-    </div>
+    
     <CourseNavigation :courses="courses" />
   </div>
 </template>
@@ -26,15 +24,3 @@ export default {
   }
 }
 </script>
-<style media="screen">
-  .line {
-    position: fixed;
-    background: red;
-    width: 100%;
-    height:10px;
-    content: '';
-    top: 50%;
-    left: 0;
-    transform: translateY(-5px);
-  }
-</style>

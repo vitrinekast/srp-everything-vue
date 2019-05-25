@@ -34,7 +34,7 @@
   position: relative;
 
   &__list {
-    padding: calc(50vh - 130px) $gutter--lg;
+    padding-bottom: calc(50vh - 130px);
   }
 
   &__item {
@@ -44,10 +44,10 @@
     width: 100%;
     
     a {
-      display: block;
-      animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
-      animation-delay: calc(var(--staggerIndex) * .1s);
-      animation-fill-mode: both;
+      // display: block;
+      // animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
+      // animation-delay: calc(var(--staggerIndex) * .1s);
+      // animation-fill-mode: both;
     }
     
     &--active {

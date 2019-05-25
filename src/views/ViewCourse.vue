@@ -5,7 +5,7 @@
 
       </div>
       <div class="col article">
-        <h2>{{courseName(course)}}</h2>
+        <h2 class='article__title'>{{courseName(course)}}</h2>
         <article class="" v-html="course.description" :load="onLoadedArticle">
 
         </article>

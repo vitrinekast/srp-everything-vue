@@ -22,10 +22,11 @@ html {
 
   &--Home {
     // overflow: hidden;
-    padding: $gutter--lg;
+    
+    padding:  calc(50vh - 130px) $gutter--lg $gutter--lg $gutter--lg;
   }
 
   &--course {
-    padding-top: calc(50vh - 122px);
+    padding:  calc(50vh - 130px) $gutter--lg $gutter--lg $gutter--lg;
   }
 }

@@ -3,9 +3,9 @@
     margin: $gutter--lg*5 0 $gutter--lg*5 -200px;
   }
 
-  h2 {
+  .article__title {
     padding-bottom: 100px;
-    padding-top: 48px;
+    padding-top: $gutter--lg*2.5;
   }
   
   
