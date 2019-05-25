@@ -30,12 +30,9 @@ export default {
     }
   },
   mounted () {
-    console.log('oi', this.$refs)
     if(this.$route.params.courseId) {
       if(this.$refs['article']) {
-        console.log('got', Array.from(this.$refs['article'].children))
         Array.from(this.$refs['article'].children).forEach((elem, index) => {
-          console.log(elem)
           elem.style.setProperty('--staggerIndex', index);
         })
       }

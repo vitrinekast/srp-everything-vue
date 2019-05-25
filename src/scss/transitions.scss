@@ -1,24 +1,68 @@
+
+.course-desc-appear {
+  &-leave-active, &-enter-active {
+    transition: $transition--bezier;
+    max-height: 999px;
+    opacity: 1;
+  }
+  &-enter-active {
+    transition-delay: .5s; 
+  }
+  &-enter, &-leave-to {    
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    
+  }
+}
+
+.course-list-appear {
+  &-enter-active, &-leave-active {
+    .nav_vertical__item {
+      transition: $transition--bezier;
+      transition-delay: calc(var(--staggerIndex) * .1s );
+    }
+  }
+  &-enter, &-leave-to {    
+    .nav_vertical__item {
+      opacity: 0;
+      transform: translateY(90px);
+    }
+    
+  }
+}
+
 // Transition in the courselist
 .course-list {
-  &-enter-active, &-leave-active {
-    transition: $transition--bezier;
-    transition-delay: calc(var(--staggerIndex) * .1s);
+  &-enter-active {
+    &.nav_vertical__item {
+      transition-delay: calc(var(--staggerIndex) * .1s + .5s );
+    }
   }
   &-enter, &-leave-to {
     opacity: 0;
     transform: translateX(-90px);
   }
 }
-// 
-// // Transition in the course detail view
-// .fade-article {
-//   &-enter-active, &-leave-active {
-//     transition: $transition--bezier;
-//     transition-delay: calc(var(--staggerIndex) * .1s);
-//   }
-//   &-enter, &-leave-to {
-//     opacity: 0;
-//     transform: translateX(-90px);
-//     max-height: 0px;
-//   }
-// }
+
+
+
+@keyframes articleTransition {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+article {
+
+  & > * {
+    animation: .5s articleTransition cubic-bezier(.2, 0, 0, 1);
+    animation-delay: calc(var(--staggerIndex) * .1s  + .5s);
+    animation-fill-mode: both;
+  }
+}

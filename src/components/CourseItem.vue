@@ -4,7 +4,9 @@
     <router-link :to="isCenter ? { name: 'Course', params: {courseId: course.id} } : {}" >
       <h2 class='article__title'>{{courseName(course)}}</h2>
     </router-link>
-    <CourseArticle :course='course' v-if='isDetail' > </CourseArticle>
+    <transition name='course-desc-appear' duration='1500'>
+      <CourseArticle :course='course' v-if='isDetail' > </CourseArticle>
+    </transition>
     
   </div>
 </template>
@@ -59,8 +61,6 @@ export default {
         color: black;
       }
   }
-  
-  
 }
 
 </style>

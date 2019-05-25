@@ -38,12 +38,14 @@
   }
 
   &__item {
-    padding: $gutter--lg*1.5 0;
+    margin: $gutter--lg*2 0;
     color: lighten($color--black, 50);
     max-width: calc((100%/3)*2);
     width: 100%;
+    transi
     
     a {
+      transition: $transition--base;
       // display: block;
       // animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
       // animation-delay: calc(var(--staggerIndex) * .1s);
@@ -51,7 +53,9 @@
     }
     
     &--active {
-      color: $color--black;
+      a {
+        color: $color--black;
+      }
     }
   }
 }

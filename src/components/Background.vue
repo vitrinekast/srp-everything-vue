@@ -42,42 +42,38 @@ export default {
 				targets: children,
 				// easing: 'easeInCirc',
 				easing: 'easeOutElastic(5, .8)',
-        delay: anime.stagger(800, {start: 0}),
+				delay: anime.stagger( 800, { start: 0 } ),
 				keyframes: [ {
 						translateY: 100,
 						translateX: 200,
-            rotate: 90
+						rotate: 90
 					},
 					{
 						translateY: 0,
 						translateX: -10,
-            rotate: 120
+						rotate: 120
 					},
 					{
 						translateY: -50,
 						translateX: -140,
-            rotate: 180
+						rotate: 180
 					},
 					{
 						translateY: 50,
 						translateX: 0,
-            rotate: 260
+						rotate: 260
 					},
 					{
 						translateY: 90,
 						translateX: 20,
-            rotate: 360
+						rotate: 360
 					},
 				],
 				duration: 88000,
 				rotate: 360,
+        translateZ: 0,
 				direcrtion: 'alternate',
-				loop: true,
-				// complete: function () {
-				//   console.log('complete', this)
-				//   this.play();
-				// },
-				// loop: true
+				loop: true
 			} );
 		}
 	}
@@ -93,8 +89,8 @@ export default {
     padding: 90px;
     width: 50vw;
     height: 50vh;
-    -webkit-filter: url( "#goo") blur(2px);
-    filter: url( "#goo") blur(0px);
+    -webkit-filter: url( "#goo");
+    filter: url( "#goo");
 
     @for $i from 0 through 10 {
         $random-color: rgb(random(255),random(255),random(255));
@@ -113,6 +109,9 @@ export default {
     transform-origin: left;
     opacity: 1;
     top: var(--x);
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: visible;
     left: var(--y);
     width: var(--dot-size);
     height: var(--dot-size);
