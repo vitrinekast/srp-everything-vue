@@ -8,7 +8,7 @@
         class='nav_vertical__item'
         :style="{ '--staggerIndex': index }"
         :key="index"
-        :class="{ 'nav_vertical__item--active' : index == closestIndex}"
+        :class="{ 'nav_vertical__item--active' : index === closestIndex}"
         >
         <router-link
         :to="{ name: 'Course', params: {id: course.id} }
@@ -41,7 +41,7 @@ export default {
   mounted () {
     this.$refs[ 'list-item' ].forEach((listItem) => {
       let rect = listItem.getBoundingClientRect()
-      this.points.push(rect.top + rect.heighte)
+      this.points.push(rect.top + rect.height)
     })
     window.addEventListener('scroll', this.onScroll)
   },
