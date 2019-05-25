@@ -1,5 +1,5 @@
 <template>
-  
+
   <!-- TODO: figure out why ESlint is bugging about indentation here... -->
 <div id="app">
 <nav class='nav'>
@@ -13,9 +13,7 @@
 </transition>
 </div>
 </template>
-<script type="text/javascript">
 
-</script>
 <style lang="scss">
 // import all the styles at once, have  a discussion about using css modules later
 @import "/scss/_app";

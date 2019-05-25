@@ -7,21 +7,22 @@ html {
   margin: 0;
   padding: 0;
 }
-
-#app {
-  overflow: hidden;
-}
-
+// 
+// #app {
+//   overflow: hidden;
+// }
+// 
 .container {
   max-width: $container-width;
   margin: 0 auto;
 }
 
 .view {
-  overflow: scroll;
-  
+  // overflow: scroll;
+
   &--Home {
-    overflow: hidden;
+    // overflow: hidden;
+    padding: $gutter--lg;
   }
 
   &--course {

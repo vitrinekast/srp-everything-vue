@@ -33,8 +33,8 @@ export default {
     this.slides = this.$el.querySelectorAll('.slider__col')
 
     // create an onScroll event for the vertical slider to decide the current active slide and slide description
-    this.$el.addEventListener('scroll', this.onScroll)
-    this.onScroll()
+    // this.$el.addEventListener('scroll', this.onScroll)
+    // this.onScroll()
   },
   methods: {
     onScroll (e) {

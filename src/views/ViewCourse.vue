@@ -11,12 +11,11 @@
         </article>
       </div>
     </div>
-    
+
     <section class='container article--section'>
       <h3>_INSPIRATION</h3>
         <Slider :items="works"  />
     </section>
-    
 
     <!-- <section class='container article--section'>
       <h3>_INSPIRATION</h3>
@@ -64,7 +63,7 @@ export default {
       }
       return possibilities[ course.type ] // "Item 1
     },
-    onLoadedArticle(el) {
+    onLoadedArticle (el) {
       console.log(this, el, this.$el)
     }
   }

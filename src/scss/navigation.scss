@@ -34,15 +34,11 @@
   position: relative;
 
   &__list {
-    position: absolute;
-    width: $container-width;
-    left: 0;
-    transform: translate3d(-50%, v(nav-list--transformY), 0);
-    transition: .4s cubic-bezier(.2, 0, 0, 1);
+    padding: calc(50vh - 130px) $gutter--lg;
   }
 
   &__item {
-    padding: $gutter--lg*1.5 0;
+    padding: $gutter--lg*2.5 0;
     color: lighten($color--black, 50);
     max-width: calc((100%/3)*2);
     width: 100%;
