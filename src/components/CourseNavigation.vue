@@ -1,27 +1,35 @@
 <template lang="html">
   <div class="nav_vertical">
+    <router-link
+    :to="{ name: 'Home' }
+    ">
+    back
+  </router-link>
 
     <ul class="nav_vertical__list">
-      <li
-        ref='list-item'
-        v-for='(course, index) in courses'
-        class='nav_vertical__item'
-        :style="{ '--staggerIndex': index }"
-        :key="index"
-        :class="{ 'nav_vertical__item--active' : index === closestIndex}"
-        >
-        <router-link
-        :to="{ name: 'Course', params: {id: course.id} }
-        ">
-         <h2>{{courseName(course)}}</h2>
-       </router-link>
-      </li>
+      <transition-group name="course-list" duration='50000'>
+                <li
+          ref='list-item'
+          v-for='(course, index) in courses'
+          class='nav_vertical__item'
+          :style="{ '--staggerIndex': index }"
+          :key="course.id"
+          :class="{ 'nav_vertical__item--active' : index === closestIndex}"
+          >
+          <CourseItem :course='course' :isCenter='index === closestIndex' />
+        </li>
+       </transition-group>
     </ul>
   </div>
 </template>
 
 <script>
+import CourseItem from '@/components/CourseItem'
+
 export default {
+  components: {
+    CourseItem
+  },
   props: {
     courses: {
       required: true,
@@ -32,7 +40,8 @@ export default {
     return {
       points: [],
       closestIndex: 0,
-      middle: 0
+      middle: 0,
+      isDetail: this.$route.params.courseId
     }
   },
   destroyed () {
@@ -52,20 +61,7 @@ export default {
       this.closestIndex = this.points.indexOf(this.points.reduce((prev, curr) => {
         return (Math.abs(curr - this.middle) < Math.abs(prev - this.middle) ? curr : prev)
       }))
-    },
-    // Display a different kind of title dependant on the subject
-    courseName (course) {
-      const possibilities = {
-        lesson: `> ${course.title}`,
-        project: `# ${course.title}`,
-        nerd: `{${course.title}}`
-      }
-      return possibilities[ course.type ]
     }
-
   }
 }
 </script>
-
-<style lang="css" scoped>
-</style>

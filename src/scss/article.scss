@@ -3,9 +3,8 @@
     margin: $gutter--lg*5 0 $gutter--lg*5 -200px;
   }
 
-  .article__title {
+  &__title {
     padding-bottom: 100px;
-    padding-top: $gutter--lg*2.5;
   }
   
   
@@ -26,4 +25,24 @@
     // max-width: 100%;
   }
 
+}
+
+@keyframes articleTransition {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+article {
+  
+  & > * {
+    animation: .5s articleTransition cubic-bezier(.2, 0, 0, 1);
+    animation-delay: calc(var(--staggerIndex) * .1s  + .5s);
+    animation-fill-mode: both;
+  }
 }

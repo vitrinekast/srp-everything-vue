@@ -1,0 +1,48 @@
+<template lang="html">
+  <div class="">
+    <article ref='article' class="article" v-html='course.description'>
+      
+    </article>
+    <section class='article--section'>
+      <h3>_INSPIRATION</h3>
+        <Slider :items="works"  />
+    </section>
+  </div>
+</template>
+
+<script>
+import sourceData from '@/mockData'
+import Slider from '@/components/Slider'
+
+export default {
+  name: 'CourseArticle',
+  components: {
+    Slider
+  },
+  props: {
+    course: {
+      required: true 
+    }
+  },
+  data() {
+    return {
+      works: Object.values(sourceData.work).filter(item => item.courses.includes(this.course.id))
+    }
+  },
+  mounted () {
+    console.log('oi', this.$refs)
+    if(this.$route.params.courseId) {
+      if(this.$refs['article']) {
+        console.log('got', Array.from(this.$refs['article'].children))
+        Array.from(this.$refs['article'].children).forEach((elem, index) => {
+          console.log(elem)
+          elem.style.setProperty('--staggerIndex', index);
+        })
+      }
+    }
+  }
+}
+</script>
+
+<style lang="css" scoped>
+</style>

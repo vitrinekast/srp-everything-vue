@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    
+
     <CourseNavigation :courses="courses" />
   </div>
 </template>
@@ -16,10 +16,13 @@ export default {
   },
   // TODO: Make props more specific using Vue standards
   props: [ 'course', 'id' ],
-  data () {
-    return {
-      // Return all the courses. TODO: Implement firebase
-      courses: Object.values(sourceData.courses)
+  mounted () {
+    console.log(this.$route)
+  },
+
+  computed: {
+    courses () {
+      return this.$route.params.courseId ? Object.values(sourceData.courses).filter(course => course.id === this.$route.params.courseId) : Object.values(sourceData.courses)
     }
   }
 }

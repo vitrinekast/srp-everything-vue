@@ -1,8 +1,8 @@
+// TODO: lazy loading routes https://router.vuejs.org/guide/advanced/lazy-loading.html#grouping-components-in-the-same-chunk
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/ViewHome.vue'
 import About from '@/views/ViewAbout.vue'
-import Course from '@/views/ViewCourse.vue'
 import Submit from '@/views/ViewSubmit.vue'
 
 Vue.use(Router)
@@ -16,7 +16,8 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: {
-        title: 'home'
+        title: 'home',
+        detail: false
       }
     },
     {
@@ -30,11 +31,12 @@ export default new Router({
       component: About
     },
     {
-      path: '/course/:id',
+      path: '/course/:courseId',
       name: 'Course',
-      component: Course,
+      component: Home,
       meta: {
-        title: 'course'
+        title: 'course',
+        detail: true
       },
       props: true
     }
