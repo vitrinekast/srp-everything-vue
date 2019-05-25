@@ -1,12 +1,8 @@
 <template lang="html">
   <div class="nav_vertical">
-    <router-link
-    :to="{ name: 'Home' }
-    ">
-    back
-  </router-link>
-
-    <ul class="nav_vertical__list">
+    <Background :index='closestIndex'/>
+    
+    <ul class="nav_vertical__list container">
       <transition-group name="course-list" duration='50000'>
                 <li
           ref='list-item'
@@ -25,10 +21,11 @@
 
 <script>
 import CourseItem from '@/components/CourseItem'
-
+import Background from '@/components/Background'
 export default {
   components: {
-    CourseItem
+    CourseItem,
+    Background
   },
   props: {
     courses: {

@@ -19,14 +19,14 @@ html {
 
 .view {
   // overflow: scroll;
-  padding:  calc(50vh - 130px) $gutter--lg $gutter--lg $gutter--lg;
+  padding:  45vh $gutter--lg $gutter--lg $gutter--lg;
   &--Home {
     // overflow: hidden;
     
-    padding:  calc(50vh - 130px) $gutter--lg $gutter--lg $gutter--lg;
+    padding:  45vh $gutter--lg $gutter--lg $gutter--lg;
   }
 
   &--course {
-    padding:  calc(50vh - 130px) $gutter--lg $gutter--lg $gutter--lg;
+    padding:  45vh $gutter--lg $gutter--lg $gutter--lg;
   }
 }
