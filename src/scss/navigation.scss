@@ -39,12 +39,13 @@
 
   &__item {
     margin: $gutter--lg*2 0;
-    color: lighten($color--black, 50);
+    
     max-width: calc((100%/3)*2);
     width: 100%;
-    transi
+    
     
     a {
+      color: lighten($color--black, 50);
       transition: $transition--base;
       // display: block;
       // animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
