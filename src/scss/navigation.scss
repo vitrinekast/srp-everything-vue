@@ -47,15 +47,15 @@
     a {
       color: lighten($color--black, 50);
       transition: $transition--base;
-      // display: block;
-      // animation: animateIn .4s cubic-bezier(.2, 0, 0, 1);
-      // animation-delay: calc(var(--staggerIndex) * .1s);
-      // animation-fill-mode: both;
+      -webkit-text-stroke-width: 2px;
+      color: transparent;
+      -webkit-text-stroke-color: black;
     }
     
     &--active {
       a {
         color: $color--black;
+       
       }
     }
   }

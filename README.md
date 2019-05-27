@@ -1,4 +1,7 @@
-# Running this repo
+# CMD_SRP
+You can find the demo right [here]( https://cmd-srp.firebaseapp.com)
+
+## Running this repo
 
 This project is created using vue-cli create.
 

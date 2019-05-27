@@ -4,8 +4,13 @@
       
     </article>
     <section class='article--section'>
-      <h3>_INSPIRATION</h3>
+      <h3>_STUDENT?WORK</h3>
         <Slider :items="works"  />
+    </section>
+    
+    <section class='article--section'>
+      <h3>_INSPIRATION</h3>
+      <CourseInspiration :items='articles' /></CourseInspiration>    
     </section>
   </div>
 </template>
@@ -13,10 +18,12 @@
 <script>
 import sourceData from '@/mockData'
 import Slider from '@/components/Slider'
+import CourseInspiration from '@/components/CourseInspiration'
 
 export default {
   name: 'CourseArticle',
   components: {
+    CourseInspiration,
     Slider
   },
   props: {
@@ -26,7 +33,8 @@ export default {
   },
   data() {
     return {
-      works: Object.values(sourceData.work).filter(item => item.courses.includes(this.course.id))
+      works: Object.values(sourceData.work).filter(item => item.courses.includes(this.course.id)),
+      articles: Object.values(sourceData.articles).filter(item => item.courses.includes(this.course.id))
     }
   },
   mounted () {

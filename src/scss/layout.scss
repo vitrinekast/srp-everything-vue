@@ -30,3 +30,12 @@ html {
     padding:  30vh $gutter--lg $gutter--lg $gutter--lg;
   }
 }
+
+
+.article--section {
+  position: relative;
+  margin: 100px 0;
+  & + & {
+    margin: 150px 0; 
+  }
+}
