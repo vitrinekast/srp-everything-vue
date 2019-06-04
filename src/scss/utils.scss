@@ -5,6 +5,11 @@
     justify-content: center;
     align-items: center;
   }
+  
+  &--between {
+    display: flex;
+    align-items: space-between;
+  }
 }
 
 .p {

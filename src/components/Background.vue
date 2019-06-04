@@ -1,5 +1,5 @@
-<template lang="html">
-  
+]<template lang="html">
+
       <div class="p--fixed ev--none " >
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
           <defs>
@@ -23,60 +23,60 @@
 <script>
 import anime from 'animejs'
 export default {
-	props: {
-		index: {
-			required: false,
-			type: Number
-		}
-	},
-	mounted() {
-
-		if( this.$refs[ 'dots' ] ) {
-			let children = Array.from( this.$refs[ 'dots' ].children )
-			children.forEach( ( elem, index ) => {
-				elem.style.setProperty( '--dot-size', anime.random( 200, 400 ) + 'px' )
-				elem.style.setProperty( '--x', anime.random( -100, 100 ) + 'px' )
-				elem.style.setProperty( '--y', anime.random( -100, 100 ) + 'px' )
-			} )
-			let animation = anime( {
-				targets: children,
-				// easing: 'easeInCirc',
-				easing: 'easeOutElastic(5, .8)',
-				delay: anime.stagger( 800, { start: 0 } ),
-				keyframes: [ {
-						translateY: 100,
-						translateX: 200,
-						rotate: 90
-					},
-					{
-						translateY: 0,
-						translateX: -10,
-						rotate: 120
-					},
-					{
-						translateY: -50,
-						translateX: -140,
-						rotate: 180
-					},
-					{
-						translateY: 50,
-						translateX: 0,
-						rotate: 260
-					},
-					{
-						translateY: 90,
-						translateX: 20,
-						rotate: 360
-					},
-				],
-				duration: 88000,
-				rotate: 360,
+  props: {
+    index: {
+      required: false,
+      type: Number
+    }
+  },
+  mounted () {
+    if (this.$refs[ 'dots' ]) {
+      let children = Array.from(this.$refs[ 'dots' ].children)
+      children.forEach((elem, index) => {
+        elem.style.setProperty('--dot-size', anime.random(200, 400) + 'px')
+        elem.style.setProperty('--x', anime.random(-100, 100) + 'px')
+        elem.style.setProperty('--y', anime.random(-100, 100) + 'px')
+      })
+      anime({
+        targets: children,
+        // easing: 'easeInCirc',
+        easing: 'easeOutElastic(5, .8)',
+        delay: anime.stagger(800, { start: 0 }),
+        keyframes: [
+          {
+            translateY: 100,
+            translateX: 200,
+            rotate: 90
+          },
+          {
+            translateY: 0,
+            translateX: -10,
+            rotate: 120
+          },
+          {
+            translateY: -50,
+            translateX: -140,
+            rotate: 180
+          },
+          {
+            translateY: 50,
+            translateX: 0,
+            rotate: 260
+          },
+          {
+            translateY: 90,
+            translateX: 20,
+            rotate: 360
+          }
+        ],
+        duration: 88000,
+        rotate: 360,
         translateZ: 0,
-				direcrtion: 'alternate',
-				loop: true
-			} );
-		}
-	}
+        direcrtion: 'alternate',
+        loop: true
+      })
+    }
+  }
 }
 </script>
 
