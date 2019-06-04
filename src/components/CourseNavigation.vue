@@ -62,13 +62,16 @@ export default {
   destroyed () {
     window.removeEventListener('scroll', this.onScroll)
   },
-  mounted () {
-    this.$refs[ 'list-item' ].forEach((listItem) => {
-      let rect = listItem.getBoundingClientRect()
-      console.log(rect, getPosition(listItem))
-      this.points.push(getPosition(listItem).y + (rect.height / 4))
-    })
-    window.addEventListener('scroll', this.onScroll)
+  created () {
+
+    this.$parent.$on('loaded', () => {
+      
+      this.$refs[ 'list-item' ].forEach((listItem) => {
+        let rect = listItem.getBoundingClientRect()
+        this.points.push(getPosition(listItem).y + (rect.height / 4))
+      })
+      window.addEventListener('scroll', this.onScroll)
+    });
   },
   methods: {
     onScroll (e) {

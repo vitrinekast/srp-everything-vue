@@ -3,7 +3,7 @@
     <article ref='article' class="article" v-html='course.description'>
 
     </article>
-    <section class='article--section'>
+    <section class='article--section' v-if='works.length > 0'>
       <h3>_STUDENT?WORK</h3>
         <WorkList :items="works"  />
     </section>

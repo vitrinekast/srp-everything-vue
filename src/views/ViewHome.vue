@@ -1,29 +1,44 @@
 <template lang="html">
   <div>
-
     <CourseNavigation :courses="courses" />
   </div>
 </template>
 
 <script>
 import CourseNavigation from '@/components/CourseNavigation'
-// TODO: implement Firebase
-import sourceData from '@/mockData.json'
+import { mapActions } from 'vuex'
 
 export default {
-  components: {
-    CourseNavigation
-  },
-  // TODO: Make props more specific using Vue standards
-  props: [ 'course', 'id' ],
-  mounted () {
-    console.log(this.$route)
-  },
+	props: [ 'course', 'id' ],
+	components: {
+		'CourseNavigation': CourseNavigation
+	},
+	methods: {
+		...mapActions( [ 'fetchAllCourses', 'fetchAllWorksByCourse' ] )
+	},
 
-  computed: {
-    courses () {
-      return this.$route.params.courseId ? Object.values(sourceData.courses).filter(course => course.id === this.$route.params.courseId) : Object.values(sourceData.courses)
-    }
-  }
+	computed: {
+		courses() {
+
+			if( this.$route.params.courseId ) {
+				return this.$store.getters.courseById( this.$route.params.courseId )
+			} else {
+				return Object.values( this.$store.state.courses )
+			}
+
+		}
+	},
+	created() {
+		this.fetchAllCourses()
+			.then( (courses) => {
+        if( this.$route.params.courseId ) {
+           this.fetchAllWorksByCourse(this.$route.params.courseId).then(() => {
+             this.$emit( 'loaded', true );
+           })
+        } else {
+          this.$emit( 'loaded', true );
+        }
+			} )
+	}
 }
 </script>
