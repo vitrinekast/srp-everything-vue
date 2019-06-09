@@ -7,35 +7,8 @@ html {
   margin: 0;
   padding: 0;
 }
-// 
-// #app {
-//   overflow: hidden;
-// }
-// 
+
 .container {
   max-width: $container-width;
   margin: 0 auto;
-}
-
-.view {
-  // overflow: scroll;
-  padding:  30vh $gutter--lg $gutter--lg $gutter--lg;
-  &--Home {
-    // overflow: hidden;
-    
-    padding:  30vh $gutter--lg $gutter--lg $gutter--lg;
-  }
-
-  &--course {
-    padding:  30vh $gutter--lg $gutter--lg $gutter--lg;
-  }
-}
-
-
-.article--section {
-  position: relative;
-  margin: 100px 0;
-  & + & {
-    margin: 150px 0; 
-  }
 }

@@ -1,44 +1,31 @@
 <template lang="html">
-  <div>
-    <CourseNavigation :courses="courses" />
+  <div class="">
+    <h2>Dit is home</h2>
+    <div class="">
+      <li v-for='inf in info'>{{inf.Name}}</li>
+      
+    </div>
   </div>
+  
 </template>
 
 <script>
-import CourseNavigation from '@/components/CourseNavigation'
 import { mapActions } from 'vuex'
 
 export default {
-	props: [ 'course', 'id' ],
-	components: {
-		'CourseNavigation': CourseNavigation
-	},
-	methods: {
-		...mapActions( [ 'fetchAllCourses', 'fetchAllWorksByCourse' ] )
-	},
-
-	computed: {
-		courses() {
-
-			if( this.$route.params.courseId ) {
-				return this.$store.getters.courseById( this.$route.params.courseId )
-			} else {
-				return Object.values( this.$store.state.courses )
-			}
-
-		}
-	},
-	created() {
-		this.fetchAllCourses()
-			.then( (courses) => {
-        if( this.$route.params.courseId ) {
-           this.fetchAllWorksByCourse(this.$route.params.courseId).then(() => {
-             this.$emit( 'loaded', true );
-           })
-        } else {
-          this.$emit( 'loaded', true );
-        }
-			} )
-	}
+  computed: {
+    courses () {
+      return Object.values(this.$store.state.courses.items)
+    }
+  },
+  methods: {
+    ...mapActions('courses', ['fetchAllCourses'])
+  },
+  created() {
+    this.fetchAllCourses()
+      .then((data) => {
+        console.log(data)
+      })
+  }
 }
 </script>

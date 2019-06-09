@@ -2,8 +2,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/ViewHome.vue'
-import About from '@/views/ViewAbout.vue'
-import Submit from '@/views/ViewSubmit.vue'
 
 Vue.use(Router)
 
@@ -19,26 +17,6 @@ export default new Router({
         title: 'home',
         detail: false
       }
-    },
-    {
-      path: '/submit',
-      name: 'Submit',
-      component: Submit
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
-    {
-      path: '/course/:courseId',
-      name: 'Course',
-      component: Home,
-      meta: {
-        title: 'course',
-        detail: true
-      },
-      props: true
     }
   ]
 })

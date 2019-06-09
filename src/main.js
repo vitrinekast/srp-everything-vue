@@ -3,6 +3,7 @@ import App from './App.vue'
 import firebase from 'firebase'
 import router from '@/router/index.js'
 import store from '@/store/index.js'
+import ApiService from '@/services/api'
 
 Vue.config.productionTip = false
 
@@ -18,6 +19,9 @@ const firebaseConfig = {
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
+// console.log(process)
+ApiService.init(process.env.VUE_APP_ROOT_API)
+
 
 new Vue({
   router,

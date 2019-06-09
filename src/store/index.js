@@ -4,6 +4,8 @@ import getters from './getters'
 import mutations from './mutations'
 import actions from './actions'
 
+import courses from './modules/courses.js'
+
 Vue.use(Vuex)
 
 // Implement the store when firebase is implemented
@@ -13,5 +15,9 @@ export default new Vuex.Store({
   },
   getters,
   actions,
-  mutations
+  mutations,
+  
+  modules: {
+    courses
+  }
 })
