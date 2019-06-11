@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
 
 html {
   font-size: $font-size-base;
@@ -7,6 +9,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.45;
+  color: $color--black;
 }
 
 .heading,
@@ -48,6 +51,41 @@ h5 {
   font-size: $font-size-base*1.3;
 }
 
+article {
+  h1, h2, h3, h4, h5, h6 {
+    margin: $gutter--lg 0 $gutter--md;
+  }
+  h1 {
+    font-size: $font-size-base*2.5;
+  }
+
+  .h2,
+  h2 {
+    font-size: $font-size-base*2;
+
+  }
+
+  .h3,
+  h3 {
+    font-size: $font-size-base*1.5;
+  }
+
+  h4 {
+    font-size: $font-size-base*1.5;
+  }
+
+  h5 {
+    font-size: $font-size-base*1.3;
+  }
+  
+  li {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+
+}
+
 .text_small,
 small {
   font-size: $font-size-base*.75;
@@ -64,6 +102,8 @@ p {
   font-size: 1.5rem;
   line-height: 1.5;
 }
+
+
 
 blockquote {
   @extend .h3;

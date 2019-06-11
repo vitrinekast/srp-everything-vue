@@ -1,0 +1,81 @@
+body {
+  --card-bg: #{$color--black};
+  --card-color: #{$color--white};
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: $grid--gutter;
+  grid-row-gap: $grid--gutter;
+  grid-auto-flow: dense;
+  margin-bottom: $gutter--lg*5  ;
+  
+  &__title {
+    margin-top: $gutter--lg;
+    margin-bottom: $gutter--sm;
+  }
+
+  &__card {
+    padding: $gutter--md;
+    min-height: 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    
+    &:hover .card__bg {
+      background-color: $color--white;
+    }
+
+    .card__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color--white;
+      border: $gutter--sm solid $color--black;
+      transition: $transition--bezier;
+      z-index: -1;
+      
+      
+    }
+
+    & > * {
+      flex: 1 0 100%;
+    }
+    
+    &[type='Nerd'] {
+      align-items: flex-start;
+      height: 100%;
+    
+      .card__inner {
+        position: sticky;
+        top: $gutter--sm;
+      }
+    
+      .card__tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: right;
+        padding: $gutter--md;
+      }
+    }
+
+    &[type~='Subject'] {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
+
+    &[type='Project'] {
+      grid-column-start: 3;
+      grid-row-end: span 2;
+      --card-bg: #{$color--yellow};
+      --card-color: #{$color--white};
+    }
+
+  }
+}

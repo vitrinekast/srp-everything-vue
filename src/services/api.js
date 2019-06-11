@@ -1,71 +1,38 @@
 import axios from 'axios'
-const token = '184ce34cf8ce109411317b3b60c8af';
+const token = '184ce34cf8ce109411317b3b60c8af'
 
 const ApiService = {
 
-    init(baseURL) {
-        axios.defaults.baseURL = baseURL;
-    },
+  init (baseURL) {
+    axios.defaults.baseURL = baseURL
+  },
 
-    setHeader() {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${TokenService.getToken()}`
-    },
+  get (resource) {
+    return axios.get(resource)
+  },
 
-    removeHeader() {
-        axios.defaults.headers.common = {}
-    },
+  getCollection (name, id) {
+    return axios.get(`/api/collections/get/${name}?token=${token}${id ? '&filter[_id]=' + id : ''}`)
+  },
 
-    get(resource) {
-        return axios.get(resource)
-    },
+  getSingleton (name) {
+    return axios.get(`/api/singletons/get/${name}?token=${token}`)
+  },
 
-    post(resource, data) {
-        return axios.post(resource, data)
-    },
+  post (resource, data) {
+    return axios.post(resource, data)
+  },
 
-    put(resource, data) {
-        return axios.put(resource, data)
-    },
+  put (resource, data) {
+    return axios.put(resource, data)
+  },
 
-    delete(resource) {
-        return axios.delete(resource)
-    },
-
-    /**
-     * Perform a custom Axios request.
-     *
-     * data is an object containing the following properties:
-     *  - method
-     *  - url
-     *  - data ... request payload
-     *  - auth (optional)
-     *    - username
-     *    - password
-    **/
-    customRequest(data) {
-        return axios(data)
-    }
+  delete (resource) {
+    return axios.delete(resource)
+  },
+  customRequest (data) {
+    return axios(data)
+  }
 }
 
 export default ApiService
-
-
-// 
-// import axios from 'axios'
-// const token = '184ce34cf8ce109411317b3b60c8af';
-// 
-// export default {
-//   data () {
-//     return {
-//       info: null
-//     }
-//   },
-//   mounted () {
-//     axios
-//       .get(`http://cms.cmd-everything.local/api/collections/get/Courses?token=${token}`)
-//       .then((response) => {
-//         this.info = response.data.entries;
-//         console.log(response)
-//       })
-//   }
-// }

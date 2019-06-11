@@ -1,0 +1,36 @@
+
+
+.page-home {
+    --delay-index: 0;
+    
+  .header__title span, .header__subtitle, .timetable__title span , .timetable__card{
+    opacity: 0;
+    transition: $transition--bezier;
+    transform: translate3d(0, 22px, 0);
+  }
+  
+  .timetable__title span, .timetable__card {
+    transition-delay: calc(var(--delay-index) * 50ms + 500ms);
+  }
+  
+  .header__title span {
+    @for $i from 1 through 10 {
+      &:nth-of-type(#{$i}) {
+        transition-delay: $i * 150ms;
+      }
+    }
+  }
+  
+  .header__subtitle {
+    transition-delay: .6s; 
+  }
+  
+  
+  
+  &.loaded {
+    .header__title span, .header__subtitle, .timetable__title span, .timetable__card {
+      opacity: 1;
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+}

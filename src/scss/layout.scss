@@ -12,3 +12,53 @@ html {
   max-width: $container-width;
   margin: 0 auto;
 }
+
+
+.header {
+  
+  &--lg {
+    min-height: 65vh;
+    
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .container {
+      flex: 1 1 100%;
+      // padding: $gutter--lg*3;
+    }
+  }
+  
+  &__title span {
+    display: inline-block;
+    margin-right: $gutter--md;
+  }
+}
+
+
+.view {
+  &--Subject-1 {
+    background-color: $color--blue;
+    color: $color--white;
+  }
+}
+
+.layout {
+  &--timetable {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: $grid--gutter;
+    grid-row-gap: $grid--gutter; 
+  }
+  
+  &--detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-top: 100px;
+    aside {
+      
+    }
+  }
+  
+}

@@ -1,0 +1,94 @@
+
+.home-header-enter,
+.home-header-leave-active {
+  .header__title {
+    border: 2px solid red;
+  }
+}
+
+.app-enter-active,
+.app-leave-active {
+  transition-duration: .3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  .timetable__card:not([active]) {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: $transition--bezier;
+  }
+}
+
+%leave-left {
+  transform: translate3d(-50px, 0, 0);
+  opacity: .5;
+}
+
+%leave-right {
+  transform: translate3d(50px, 0, 0);
+  opacity: .5;
+}
+
+%leave-up {
+  transform: translate3d(0, -50px, 0);
+  opacity: .5;
+}
+
+%leave-down {
+  transform: translate3d(0, 50px, 0);
+  opacity: .5;
+}
+
+.app-enter,
+.app-leave-active {
+  .timetable {
+    &[active-type~='Subject'] {
+      .timetable__card {
+        &[type='Project'] {
+          @extend %leave-right;
+        }
+
+        &[type='Nerd'] {
+          @extend %leave-left;
+        }
+
+        &[type~=Subject]:not([active]) {
+          @extend %leave-up;
+        }
+
+        &[active] ~ .timetable__card[type~=Subject] {
+          @extend %leave-down;
+        }
+      }
+    }
+
+    &[active-type='Nerd'] {
+      .timetable__card {
+        &[type='Project'],
+        &[type='Subject 2'],
+        &[type='Subject 1'] {
+          @extend %leave-right;
+        }
+      }
+
+    }
+
+    &[active-type='Project'] {
+      .timetable__card {
+        &[type='Nerd'],
+        &[type='Subject 2'],
+        &[type='Subject 1'] {
+          @extend %leave-left;
+        }
+
+        &[type='Project']:not([active]) {
+          @extend %leave-up;
+        }
+      }
+
+      .timetable__card[active] ~ .timetable__card[type='Project'] {
+        @extend %leave-down;
+      }
+
+    }
+  }
+}

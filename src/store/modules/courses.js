@@ -1,4 +1,6 @@
-import firebase from 'firebase'
+import ApiService from '@/services/api'
+
+const RESOURCE = 'courses'
 
 export default {
   namespaced: true,
@@ -8,21 +10,16 @@ export default {
   },
 
   actions: {
-    fetchAllCourses ({state, commit}) {
+    fetchCourses ({ state, commit }, id) {
       console.log('🔥', 'fetch all courses')
-      return new Promise((resolve, reject) => {
-        firebase.database().ref('categories').once('value', snapshot => {
-          const categoriesObject = snapshot.val()
-          Object.keys(categoriesObject).forEach(categoryId => {
-            const category = categoriesObject[categoryId]
-            commit('setItem', {resource: 'categories', id: categoryId, item: category}, {root: true})
-          })
-          resolve(Object.values(state.items))
-        })
-      })
-    },
 
-    fetchCategory: ({dispatch}, {id}) => dispatch('fetchItem', {resource: 'categories', id, emoji: '🏷'}, {root: true}),
-    fetchCategories: ({dispatch}, {ids}) => dispatch('fetchItems', {resource: 'categories', ids, emoji: '🏷'}, {root: true})
+      return ApiService.getCollection('Courses', id)
+        .then((response) => {
+          response.data.entries.forEach((item) => {
+            commit('setItem', { resource: RESOURCE, id: item._id, item: item }, { root: true })
+          })
+          return response.data.entries
+        })
+    }
   }
 }
