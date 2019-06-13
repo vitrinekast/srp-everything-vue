@@ -1,5 +1,5 @@
 <template lang="html">
-  <li @click='onClick' class='timetable__card card' ref='card' :type='course.type'>
+  <li @click='onClick' class='timetable__card card card--colored' ref='card' :type='course.type'>
     <div ref='bg' class="card__bg"></div>
     <div class="card__inner">
       <h4 class='card__tag' v-if='course.type == "Nerd"'>//0</h4>
@@ -13,46 +13,62 @@
 
 <script>
 import anime from 'animejs'
+
 export default {
-  props: {
-    course: {
-      type: Object,
-      required: true
-    }
-  },
-  filters: {
-    truncate (text) {
-      return text.length > 100 ? text.substring(0, 100) + '...' : text
-    }
-  },
-  methods: {
-    onClick (dis) {
-      const course = this.course
-      const card = this.$refs.card
-      const bounds = this.$refs.bg.getBoundingClientRect()
-      this.$emit('navigate', { course })
+	props: {
+		course: {
+			type: Object,
+			required: true
+		}
+	},
+	filters: {
+		truncate( text ) {
+			return text.length > 100 ? text.substring( 0, 100 ) + '...' : text
+		}
+	},
+	methods: {
+		onClick( dis ) {
+			const course = this.course
+			const card = this.$refs.card
+			const bounds = this.$refs.bg.getBoundingClientRect()
+			// this.$emit('navigate', { course })
 
-      this.$refs.bg.style.position = 'fixed'
-      card.style.zIndex = '2'
-      card.setAttribute('active', true)
-      let self = this
-      self.$router.push({ name: 'Detail', params: { id: course._id } })
-      anime({
-        targets: this.$refs.bg,
-        width: [`${bounds.width}px`, `${window.innerWidth}px`],
-        height: [`${bounds.height}px`, `${window.innerHeight}px`],
-        top: [`${bounds.y}px`, `0px`],
-        left: [`${bounds.x}px`, `0px`],
-        easing: 'cubic-bezier(.2, 0, 0, 1)',
-        duration: 800,
-        complete () {
-          // card.removeAttribute('active')
+			this.$refs.bg.style.position = 'fixed'
+			card.style.zIndex = '2'
+			console.log( bounds )
+			var self = this;
+			document.querySelector( '.page-home' ).classList.remove( 'loaded' );
 
-          // setTimeout(() => { this.animatables[0].target.style = '' }, 500)
-        }
-      })
-    }
-  }
+			self.$refs.card.setAttribute( 'active', true )
+			
+			var tl = anime.timeline( {
+
+				easing: 'cubicBezier(.2, .05, .05, 1)',
+				complete: function () {
+					console.log( 'he' )
+					self.$router.push( { name: 'Detail', params: { id: course._id } } )
+				},
+			} );
+
+			tl
+				.add( {
+					targets: self.$refs.bg,
+					height: [ bounds.height, 50 ],
+					width: [ bounds.width, 1200 ],
+					top: [ bounds.y, 100 ],
+					duration: 500,
+					left: [ bounds.x, document.querySelector( '.container' ).getBoundingClientRect().x ]
+				} )
+				.add( {
+					targets: self.$refs.bg,
+					height: 500,
+					duration: 300,
+				} )
+
+
+
+		}
+	}
 }
 </script>
 

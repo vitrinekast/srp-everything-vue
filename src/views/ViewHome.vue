@@ -3,7 +3,7 @@
       <header class='header--lg'>
         <div class="container" v-if='header'>
           <h2 class='header__title'>
-            <span ref='word' v-for='(word, index) in splitTitle' :key='index'>{{word}} </span>
+            {{header.Title}}
           </h2>
           <p class='header__subtitle' ref='word'>{{header.Description}}</p>
         </div>
@@ -26,9 +26,6 @@ export default {
   computed: {
     courses () {
       return Object.values(this.$store.state.courses.items)
-    },
-    splitTitle () {
-      return this.header.Title ? this.header.Title.split(' ') : []
     }
   },
   data () {

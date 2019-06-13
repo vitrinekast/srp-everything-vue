@@ -30,6 +30,15 @@ html {
     }
   }
   
+  &--md {
+    height: 500px;
+    position: relative;
+    margin-bottom: -50px;
+    margin-top: 100px;
+    position: relative;
+    
+  }
+  
   &__title span {
     display: inline-block;
     margin-right: $gutter--md;
@@ -38,10 +47,7 @@ html {
 
 
 .view {
-  &--Subject-1 {
-    background-color: $color--blue;
-    color: $color--white;
-  }
+  
 }
 
 .layout {
@@ -54,8 +60,7 @@ html {
   
   &--detail {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding-top: 100px;
+    grid-template-columns: 1fr 3fr;
     aside {
       
     }

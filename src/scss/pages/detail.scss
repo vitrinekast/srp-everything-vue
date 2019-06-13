@@ -1,14 +1,14 @@
-.page-home {
+.page--detail {
     --delay-index: 0;
     
-  .header__title, .header__subtitle, .timetable__title, .timetable__card:not([active='true'])  {
+  .page__title, .page__subtitle, .page__content  {
     opacity: 0;
     transition: $transition--bezier;
     transform: translate3d(0, 22px, 0);
   }
   
   
-   .timetable__title {
+   .page__content {
     opacity: 0;
     transition: $transition--bezier;
     transform: translate3d(-22px, 0, 0);
@@ -24,7 +24,7 @@
   
   
   &.loaded {
-    .header__title , .header__subtitle, .timetable__title, .timetable__card:not([active='true']) {
+    .page__title, .page__subtitle, .page__content{
       opacity: 1;
       transform: translate3d(0, 0px, 0);
     }

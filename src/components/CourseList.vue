@@ -3,26 +3,26 @@
     <div class="layout--timetable">
       <main>
         <h3 class='timetable__title'>
-          <span v-for='(letter, index) in timetableTitle(1)' :key='index' :style="{'--delay-index': `${index}`}">{{letter}}</span>
+          >> Sprint 1
         </h3>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(0, 3)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
         <h3 class='timetable__title'>
-          <span v-for='(letter, index) in timetableTitle(2)' :key='index' :style="{'--delay-index': `${index}`}">{{letter}}</span>
+          >> Sprint 2
         </h3>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(3, 6)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
         <h3 class='timetable__title'>
-          <span v-for='(letter, index) in timetableTitle(3)' :key='index' :style="{'--delay-index': `${index}`}">{{letter}}</span>
+          >> Sprint 3
         </h3>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(6, 9)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
       </main>
       <aside class="">
-        <h3>Nerd!</h3>
+        <h3 class='timetable__title'>Nerd!</h3>
         <CourseListItem :course='nerdCourse' ref='courseItem' @navigate='onNavigate' />
       </aside>
     </div>
@@ -47,10 +47,6 @@ export default {
     console.log('created', this.courses)
   },
   methods: {
-    timetableTitle (num) {
-      const text = `>> Sprint ${num}`
-      return text.split('')
-    },
     onNavigate (e) {
       this.$refs.list.setAttribute('active-type', e.course.type[0])
     }

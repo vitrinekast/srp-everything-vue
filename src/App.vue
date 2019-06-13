@@ -1,9 +1,7 @@
 <template>
 <div id="app">
 
-  <transition name="app" duration='500000' >
-    <router-view></router-view>
-  </transition>
+  <router-view></router-view>
 
 </div>
 </template>
