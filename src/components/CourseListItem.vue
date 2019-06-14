@@ -15,60 +15,52 @@
 import anime from 'animejs'
 
 export default {
-	props: {
-		course: {
-			type: Object,
-			required: true
-		}
-	},
-	filters: {
-		truncate( text ) {
-			return text.length > 100 ? text.substring( 0, 100 ) + '...' : text
-		}
-	},
-	methods: {
-		onClick( dis ) {
-			const course = this.course
-			const card = this.$refs.card
-			const bounds = this.$refs.bg.getBoundingClientRect()
-			// this.$emit('navigate', { course })
+  props: {
+    course: {
+      type: Object,
+      required: true
+    }
+  },
+  filters: {
+    truncate (text) {
+      return text.length > 100 ? text.substring(0, 100) + '...' : text
+    }
+  },
+  methods: {
+    onClick (dis) {
+      const course = this.course
+      const card = this.$refs.card
+      const home = document.querySelector('.page-home')
+      const bezier = 'cubicBezier(.2, .05, .05, 1)'
+      const bounds = this.$refs.bg.getBoundingClientRect()
 
-			this.$refs.bg.style.position = 'fixed'
-			card.style.zIndex = '2'
-			console.log( bounds )
-			var self = this;
-			document.querySelector( '.page-home' ).classList.remove( 'loaded' );
+      this.$refs.bg.style.position = 'fixed'
+      card.style.zIndex = '2'
 
-			self.$refs.card.setAttribute( 'active', true )
-			
-			var tl = anime.timeline( {
+      home.classList.remove('loaded')
+      this.$refs.card.setAttribute('active', true)
 
-				easing: 'cubicBezier(.2, .05, .05, 1)',
-				complete: function () {
-					console.log( 'he' )
-					self.$router.push( { name: 'Detail', params: { id: course._id } } )
-				},
-			} );
-
-			tl
-				.add( {
-					targets: self.$refs.bg,
-					height: [ bounds.height, 50 ],
-					width: [ bounds.width, 1200 ],
-					top: [ bounds.y, 100 ],
-					duration: 500,
-					left: [ bounds.x, document.querySelector( '.container' ).getBoundingClientRect().x ]
-				} )
-				.add( {
-					targets: self.$refs.bg,
-					height: 500,
-					duration: 300,
-				} )
-
-
-
-		}
-	}
+      anime.timeline({
+        easing: bezier,
+        complete: () => {
+          this.$router.push({ name: 'Detail', params: { id: course._id } })
+        }
+      })
+        .add({
+          targets: this.$refs.bg,
+          height: [ bounds.height, 50 ],
+          width: [ bounds.width, 1200 ],
+          top: [ bounds.y, 100 ],
+          duration: 500,
+          left: [ bounds.x, document.querySelector('.container').getBoundingClientRect().x ]
+        })
+        .add({
+          targets: this.$refs.bg,
+          height: 500,
+          duration: 300
+        })
+    }
+  }
 }
 </script>
 

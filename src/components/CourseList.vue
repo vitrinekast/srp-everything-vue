@@ -43,9 +43,6 @@ export default {
     CourseListItem
   },
 
-  created () {
-    console.log('created', this.courses)
-  },
   methods: {
     onNavigate (e) {
       this.$refs.list.setAttribute('active-type', e.course.type[0])

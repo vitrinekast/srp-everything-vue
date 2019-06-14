@@ -12,14 +12,9 @@
 @import 'grid'; // Generic grid stuff. Might be merged with layout
 @import 'article'; // Article styling
 @import 'card'; // Card styling
-@import 'list'; // Lists styling
 
-@import 'navigation'; // All the navigation components
 @import 'media'; // reusable media classes
-@import 'transitions'; // Vue page transitions
-@import 'slider'; // All slider components
 @import 'timetable'; // All timetable components
 
 @import 'pages/home'; // All home page
 @import 'pages/detail'; // All home page
-

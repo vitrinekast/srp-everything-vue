@@ -6,7 +6,7 @@
     </div>
     <div class="container layout--detail">
       <aside class="">
-        
+
       </aside>
       <main class="">
         <h1 class='page__title'>{{course.name}}</h1>
@@ -27,44 +27,39 @@ export default {
     ...mapActions('courses', [ 'fetchCourses' ]),
     close () {
       console.log('close')
-      var self = this;
-      var tl = anime.timeline( {
+      var self = this
+      var tl = anime.timeline({
 
         easing: 'cubicBezier(.2, .05, .05, 1)',
         complete: function () {
-          console.log( 'he' )
-          self.$router.push( { name: 'Home'} )
-        },
-      } );
+          console.log('he')
+          self.$router.push({ name: 'Home' })
+        }
+      })
 
       tl
-        .add( {
+        .add({
           targets: self.$refs.headerBg,
           height: ['100%', '20%'],
           duration: 500,
-          complete : function (e) {
+          complete: function (e) {
             console.log('tussen')
-            
           }
-          
-        } )
-        .add( {
+
+        })
+        .add({
           targets: self.$refs.headerBg,
-          offset: "-=200",
-          complete : function (e) {
+          offset: '-=200',
+          complete: function (e) {
             self.$refs.wrapper.classList.remove('loaded')
-            
           }
-          
-        } )
-        .add( {
+
+        })
+        .add({
           targets: self.$refs.headerBg,
           translateY: window.innerHeight,
-          duration: 800,
-        } )
-      
-    
-        
+          duration: 800
+        })
     }
   },
   computed: {
@@ -72,7 +67,7 @@ export default {
       return this.$store.state.courses.items[this.$route.params.id]
     }
   },
-  
+
   created () {
     this.fetchCourses(this.$route.params.id)
       .then((data) => {

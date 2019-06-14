@@ -10,7 +10,7 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   position: relative;
-  
+
   &--dot {
     width: $gutter--lg*4;
     height: $gutter--lg*4;
@@ -18,11 +18,11 @@ body {
     border-radius: 100%;
     overflow: hidden;
   }
-  
+
   & > * {
     flex: 1 0 100%;
   }
-  
+
   &--colored[type~='Subject'] {
     --card-bg: #{$color--green};
     --card-color: #{$color--white};
@@ -32,15 +32,17 @@ body {
     --card-bg: #{$color--purple};
     --card-color: #{$color--white};
   }
+
   &--colored[type='Subject 2'] {
     --card-bg: #{$color--red};
     --card-color: #{$color--white};
   }
+
   &--colored[type='Nerd'] {
     --card-bg: #{$color--blue};
     --card-color: #{$color--white};
   }
-  
+
   &__bg {
     position: absolute;
     top: 0;
@@ -50,7 +52,7 @@ body {
     background-color: v(card-bg);
     z-index: -1;
   }
-  
+
   &__tag {
     position: absolute;
     top: 0;

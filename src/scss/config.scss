@@ -16,7 +16,7 @@ $gutter--lg: 32px;
 
 $grid--gutter: $gutter--md;
 
-$transition--base:          all .1s ease-in-out;
-$transition--bezier:        all .5s cubic-bezier(.2, 0, 0, 1);
+$transition--base: all .1s ease-in-out;
+$transition--bezier: all .5s cubic-bezier(.2, 0, 0, 1);
 $transition--bezier-android: all .2s linear;
-$transition--opacity:       opacity .2s ease-in-out;
+$transition--opacity: opacity .2s ease-in-out;
