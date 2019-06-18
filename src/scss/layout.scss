@@ -13,12 +13,16 @@ html {
   margin: 0 auto;
 }
 
+aside {
+  overflow: hidden;
+}
 .layout {
   &--timetable {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-column-gap: $grid--gutter-col;
     grid-row-gap: $grid--gutter;
+    margin-bottom: 100px;
 
     @media (max-width: 1200px) {
       grid-column-gap: $grid--gutter-col*.5;

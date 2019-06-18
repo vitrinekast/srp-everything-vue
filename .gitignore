@@ -37,6 +37,7 @@ yarn-error.log*
 composer.lock
 package-lock.json
 admin/lib
+admin
 admin/storage
 /config/*
 /tests/*
