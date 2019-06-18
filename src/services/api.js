@@ -4,7 +4,7 @@ const token = '184ce34cf8ce109411317b3b60c8af'
 const ApiService = {
 
   init (baseURL) {
-    axios.defaults.baseURL = baseURL
+    // axios.defaults.baseURL = baseURL
   },
 
   get (resource) {
@@ -12,13 +12,14 @@ const ApiService = {
   },
 
   getCollection (name, id) {
-    return axios.get(`/api/collections/get/${name}?token=${token}${id ? '&filter[_id]=' + id : ''}`)
+    return axios.get(`/static/${name.toLowerCase()}.json`)
+    // return axios.get(`/api/collections/get/${name}?token=${token}${id ? '&filter[_id]=' + id : ''}`)
   },
 
   getSingleton (name) {
-    return axios.get(`/api/singletons/get/${name}?token=${token}`)
+    return axios.get(`/static/${name.toLowerCase()}.json`)
+    // return axios.get(`/api/singletons/get/${name}?token=${token}`)
   },
-
   post (resource, data) {
     return axios.post(resource, data)
   },

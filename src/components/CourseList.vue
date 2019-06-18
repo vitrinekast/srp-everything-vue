@@ -3,19 +3,20 @@
     <div class="layout--timetable">
       <main>
         <h4 class='timetable__title'>
-          >> Sprint 1
+          >> Sprint 1: Prototype for Interaction
         </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(0, 3)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
         <h4 class='timetable__title'>
-          >> Sprint 2
+          >> Sprint 2: Solve, Debug & Optimize
+
         </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(3, 6)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
         <h4 class='timetable__title'>
-          >> Sprint 3
+          >> Sprint 3: Design for Real-Time
         </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(6, 9)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
