@@ -11,14 +11,16 @@
   }
 
   .timetable__title {
-    opacity: 0;
-    transition: $transition--bezier;
-    transform: translate3d(-22px, 0, 0);
-    transition-delay: .3s;
+    transition-delay: .2s;
   }
 
   .header__subtitle {
-    transition-delay: .2s;
+    transition-delay: .1s;
+  }
+  
+  .timetable__card:not([active='true']){
+    transition-delay: .25s;
+    transition-duration: 1s !important;
   }
 
   &.loaded {

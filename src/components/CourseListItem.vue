@@ -4,8 +4,8 @@
     <div class="card__inner">
       <h4 class='card__tag' v-if='course.type == "Nerd"'>//0</h4>
       <h3 class='card__title'>{{course.name}}</h3>
-      <div class="card__description" v-if='course.description'>
-        {{ course.description | truncate }}
+      <div class="card__deco">
+
       </div>
     </div>
   </li>
@@ -39,6 +39,7 @@ export default {
 
       home.classList.remove('loaded')
       this.$refs.card.setAttribute('active', true)
+      const baseDuration = 500
 
       anime.timeline({
         easing: bezier,
@@ -49,15 +50,18 @@ export default {
         .add({
           targets: this.$refs.bg,
           height: [ bounds.height, 50 ],
-          width: [ bounds.width, 1200 ],
-          top: [ bounds.y, 100 ],
-          duration: 500,
+          width: [ bounds.width, 1300 ],
+          top: [ bounds.y, window.innerWidth < 800 ? 0 : 100 ],
+          duration: baseDuration,
           left: [ bounds.x, document.querySelector('.container').getBoundingClientRect().x ]
         })
         .add({
           targets: this.$refs.bg,
           height: 500,
-          duration: 300
+          duration: baseDuration / 2,
+          complete: () => {
+
+          }
         })
     }
   }

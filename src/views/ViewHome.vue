@@ -42,7 +42,10 @@ export default {
     })
     this.fetchCourses()
       .then((data) => {
-        this.$refs.wrapper.classList.add('loaded')
+        window.setTimeout(() => {
+          ;
+          this.$refs.wrapper.classList.add('loaded')
+        }, 100)
       })
     console.log('oi')
   }

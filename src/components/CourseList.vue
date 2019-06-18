@@ -2,27 +2,27 @@
   <div class="container">
     <div class="layout--timetable">
       <main>
-        <h3 class='timetable__title'>
+        <h4 class='timetable__title'>
           >> Sprint 1
-        </h3>
+        </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(0, 3)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
-        <h3 class='timetable__title'>
+        <h4 class='timetable__title'>
           >> Sprint 2
-        </h3>
+        </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(3, 6)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
-        <h3 class='timetable__title'>
+        <h4 class='timetable__title'>
           >> Sprint 3
-        </h3>
+        </h4>
         <ul class='timetable' ref='list'>
           <CourseListItem ref='courseItem' v-for='(course, index) in courses.slice(6, 9)' :course='course' :key='course["_id"]' :style="{'--delay-index': `${index + 5}`}" :index='index' :id='course["_id"]' @navigate='onNavigate'  />
         </ul>
       </main>
       <aside class="">
-        <h3 class='timetable__title'>Nerd!</h3>
+        <h4 class='timetable__title'>Nerd!</h4>
         <CourseListItem :course='nerdCourse' ref='courseItem' @navigate='onNavigate' />
       </aside>
     </div>

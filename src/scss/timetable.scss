@@ -1,10 +1,5 @@
 .timetable {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-column-gap: $grid--gutter;
-  grid-row-gap: $grid--gutter;
-  grid-auto-flow: dense;
-  margin-bottom: $gutter--lg*5;
+  @extend .layout--time-list;
 
   &__title {
     margin-top: $gutter--lg;

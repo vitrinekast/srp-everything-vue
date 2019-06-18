@@ -6,14 +6,14 @@
 @import 'config'; // Variables (non-CSS)
 @import 'layout'; // Layout stuff for every page
 @import 'typography'; // Typography, import fonts, type scale
-@import 'material_icons'; // Typography, import fonts, type scale
+@import 'button'; // buttons
 
 @import 'utils'; // Any reusable classes can be put here
 @import 'grid'; // Generic grid stuff. Might be merged with layout
 @import 'article'; // Article styling
+@import 'header'; // Header styling
 @import 'card'; // Card styling
 
-@import 'media'; // reusable media classes
 @import 'timetable'; // All timetable components
 
 @import 'pages/home'; // All home page

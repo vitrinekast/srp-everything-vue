@@ -1,4 +1,4 @@
-.page--detail {
+.page-detail {
   --delay-index: 0;
 
   .page__content,
@@ -8,22 +8,18 @@
     transition: $transition--bezier;
     transform: translate3d(0, 22px, 0);
   }
-
   .page__content {
-    opacity: 0;
-    transition: $transition--bezier;
-    transform: translate3d(-22px, 0, 0);
-    transition-delay: .3s;
+    transition-delay: .1s;
   }
 
   .header__subtitle {
-    transition-delay: .2s;
+    transition-delay: .1s;
   }
 
   &.loaded {
     .page__content,
     .page__subtitle,
-    .page__title {
+    .page__title{
       opacity: 1;
       transform: translate3d(0, 0px, 0);
     }

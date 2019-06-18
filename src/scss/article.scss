@@ -1,9 +1,36 @@
 article {
+  padding-bottom: $gutter--lg;
+
   table {
     display: none;
   }
 
   ul {
     margin: $gutter--md 0;
+  }
+
+  p {
+    margin: $gutter--md 0;
+  }
+
+  ul {
+    padding-left: $gutter--lg;
+
+    li {
+      margin: $gutter--md 0;
+    }
+  }
+
+  a {
+    color: $color--blue;
+    background-image: linear-gradient(to right, $color--blue 0%, $color--blue 100%);
+    background-repeat: repeat-x; 
+    background-position: 0 98%;
+    background-size: 100% 0;
+    transition: $transition--bezier;
+
+    &:hover {
+      background-size: 100% $gutter--sm/4;
+    }
   }
 }

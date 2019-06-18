@@ -6,15 +6,16 @@ $color--green: #26EBA8;
 $color--yellow: #FFC600;
 $color--black: #23292E;
 
-$container-width: 1200px;
+$container-width: 1300px;
 
 $font-size-base: 1em;
 
-$gutter--sm: 8px;
-$gutter--md: 16px;
-$gutter--lg: 32px;
+$gutter--sm: .5rem;
+$gutter--md: 1rem;
+$gutter--lg: 2rem;
 
-$grid--gutter: $gutter--md;
+$grid--gutter: $gutter--lg*2;
+$grid--gutter-col: $gutter--lg*2;
 
 $transition--base: all .1s ease-in-out;
 $transition--bezier: all .5s cubic-bezier(.2, 0, 0, 1);

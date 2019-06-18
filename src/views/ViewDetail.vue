@@ -1,38 +1,39 @@
 <template lang="html">
-  <div :class="['page--detail', 'view--' + course.type[0].replace(' ', '-')]" v-if='course' ref='wrapper'>
+  <div :class="['page-detail', 'view--' + course.type[0].replace(' ', '-')]" v-if='course' ref='wrapper'>
     <div class="header--md container card--colored" :type='course.type[0]' ref='header'>
       <div class="card__bg" ref='headerBg' ></div>
-      <h2 @click='close'>sluit</h2>
+      <div class="btn_hamburger">
+        <div class="btn_hamburger__ic" @click='close'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
-    <div class="container layout--detail">
-      <aside class="">
 
-      </aside>
-      <main class="">
-        <h1 class='page__title'>{{course.name}}</h1>
-        <p class='page__subtitle'>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-        <article class="page__content" v-html='course.article'>
-
-        </article>
-      </main>
-    </div>
+    <ArticleContent :course='course' v-if='course' />
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import anime from 'animejs'
+import ArticleContent from '@/components/ArticleContent'
+
 export default {
+  components: {
+    ArticleContent
+  },
   methods: {
     ...mapActions('courses', [ 'fetchCourses' ]),
     close () {
       console.log('close')
       var self = this
+      const baseDuration = 300
       var tl = anime.timeline({
 
         easing: 'cubicBezier(.2, .05, .05, 1)',
         complete: function () {
-          console.log('he')
           self.$router.push({ name: 'Home' })
         }
       })
@@ -41,24 +42,19 @@ export default {
         .add({
           targets: self.$refs.headerBg,
           height: ['100%', '20%'],
-          duration: 500,
+          duration: baseDuration * 1.2,
           complete: function (e) {
+            self.$refs.wrapper.classList.remove('loaded')
             console.log('tussen')
           }
 
         })
-        .add({
-          targets: self.$refs.headerBg,
-          offset: '-=200',
-          complete: function (e) {
-            self.$refs.wrapper.classList.remove('loaded')
-          }
 
-        })
         .add({
+          offset: '-=400',
           targets: self.$refs.headerBg,
           translateY: window.innerHeight,
-          duration: 800
+          duration: baseDuration
         })
     }
   },
